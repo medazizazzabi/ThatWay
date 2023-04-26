@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane id="AnchorPane" prefHeight="639.0" prefWidth="843.0" styleClass="GladGery" stylesheets="@../../StationManagement/dashboardDesign.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="UI.PathManagement.EditPath.EditPathController">
+     <children>
+      <Label layoutX="450.0" layoutY="40.0" prefHeight="25.0" prefWidth="43.0" text="Status" />
+      <Label layoutX="438.0" layoutY="107.0" text="Vehicles" />
+      <Label layoutX="58.0" layoutY="99.0" text="Stops" />
+      <TextField fx:id="search_text" layoutX="113.0" layoutY="92.0" onKeyReleased="#SearchTable" prefHeight="31.0" prefWidth="194.0" promptText="Search" styleClass="combobox" stylesheets="@../../StationManagement/dashboardDesign.css" />
+      <ComboBox fx:id="vehicle_combobox" layoutX="513.0" layoutY="100.0" prefHeight="31.0" prefWidth="287.0" styleClass="table-view" stylesheets="@../../StationManagement/dashboardDesign.css" />
+      <ComboBox fx:id="status_combobox" layoutX="513.0" layoutY="37.0" prefHeight="31.0" prefWidth="287.0" styleClass="table-view" stylesheets="@../../StationManagement/dashboardDesign.css" />
+      <TableView fx:id="Table" editable="true" layoutX="43.0" layoutY="195.0" prefHeight="359.0" prefWidth="757.0">
+         <columns>
+            <TableColumn fx:id="id" editable="false" prefWidth="67.0" text="ID" />
+            <TableColumn fx:id="name" editable="false" prefWidth="442.0" text="Nom Station" />
+            <TableColumn fx:id="position" prefWidth="119.0" text="Position" />
+            <TableColumn fx:id="checkbox" minWidth="0.0" prefWidth="128.0" text="Selected" />
+         </columns>
+      </TableView>
+      <Button fx:id="save_btn" layoutX="687.0" layoutY="579.0" mnemonicParsing="false" onAction="#SavePathBtn" prefHeight="31.0" prefWidth="113.0" styleClass="toutBtn" stylesheets="@../../StationManagement/dashboardDesign.css" text="Save" />
+      <Button fx:id="cancel_button" layoutX="599.0" layoutY="579.0" mnemonicParsing="false" onAction="#cancel_action" prefHeight="31.0" prefWidth="64.0" styleClass="toutBtn" stylesheets="@../../StationManagement/dashboardDesign.css" text="Cancel" />
+      <Label layoutX="58.0" layoutY="39.0" prefHeight="25.0" prefWidth="43.0" text="Name" />
+      <TextField fx:id="path_name" layoutX="113.0" layoutY="39.0" prefHeight="25.0" prefWidth="194.0" styleClass="combobox" stylesheets="@../../StationManagement/dashboardDesign.css" />
+   </children>
+</AnchorPane>

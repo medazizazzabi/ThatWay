@@ -1,0 +1,7 @@
+fallback_catch_all:
+    path: /{catch_all}
+    controller: App\Controller\ErrorController::error404
+    requirements:
+        catch_all: ".*"
+    defaults:
+        _priority: -1

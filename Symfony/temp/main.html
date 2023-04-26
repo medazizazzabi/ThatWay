@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Custom Page</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</head>
+
+<body>
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+            <a class="navbar-brand" href="#">
+                <!-- Add your logo image here -->
+                <img src="logo.png" alt="Logo" width="100">
+            </a>
+            <div class="collapse navbar-collapse">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Map</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Profile</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+    <main class="container mt-4">
+        <div class="row">
+            <div class="col-md-4">
+                <form action="#" method="GET" id="search-form">
+                    <div class="input-group mb-3">
+                        <input type="text" class="form-control" name="search" placeholder="Choose starting Point">
+                        <input type="text" class="form-control" name="search" placeholder="Choose destination">
+                        <div class="input-group-append">
+                            <button type="submit" class="btn btn-dark">Search</button>
+                        </div>
+                    </div>
+                </form>
+                <button id="locate-me" class="btn btn-secondary mb-3">Locate me</button>
+                <div class="card" id="previous-searches-card">
+                    <div class="card-header">
+                        <h5 class="card-title">Previously searched places:</h5>
+                    </div>
+                    <div class="card-body">
+                        <ul class="list-group list-group-flush" id="previous-searches">
+                            <!-- List of previously searched places will be added here -->
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-8">
+                <!-- Add your map here -->
+                <div id="map" class="border" style="width: 100%; height: 400px; background-color:white;">
+                    <!-- The map will be added here -->
+                </div>
+            </div>
+        </div>
+    </main>
+    <script async defer src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&callback=initMap"></script>
+    <script src="scripts.js"></script>
+</body>
+
+</html>

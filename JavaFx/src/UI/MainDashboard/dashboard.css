@@ -1,0 +1,40 @@
+/*
+ * Empty Stylesheet file.
+ #232931 gray
+ #f6ae09 yellow
+ #35b832 green 1
+ #a8df95 green 2
+ 
+ */
+
+.button3 {
+    -fx-background-color: transparent;
+    -fx-background-radius: 0 0 0 0;
+    -fx-text-fill: #1f2324;
+}
+/*
+.button3:hover {
+    -fx-background-color: #f6ae09;
+}
+
+.button3:pressed {
+    -fx-background-color: rgb(40, 36, 57);
+}
+.menulabel{
+    -fx-text-fill: #1f2324;
+}*/
+.menulabel{
+    /* -fx-text-fill: #c1c745; */
+    -fx-text-fill: white;
+} 
+
+.main{
+    /* -fx-background-color: linear-gradient(to top right, #cdd864, #c1c745); */
+    -fx-background-color: linear-gradient(to right,#a6feaa, #F6D285);
+   
+}
+.side{
+    /* -fx-background-color: linear-gradient(to left, #414045, #58585c); */
+    -fx-background-color: #434246;
+    -fx-effect: dropshadow(gaussian, rgba(75, 78, 99, 0.4), 20, 0.5, 0, 0);
+}

@@ -1,0 +1,41 @@
+/* Green theme and cool background */
+body {
+    background-image: url('Sprinkle.svg'); /* Replace with your cool background image */
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+}
+
+nav {
+    background-color: #28a745; /* Green */
+}
+
+button[type="submit"], #locate-me {
+    background-color: #28a745; /* Green */
+    border-color: #28a745;
+}
+
+button[type="submit"]:hover, #locate-me:hover {
+    background-color: #218838; /* Darker green */
+    border-color: #218838;
+}
+
+input[type="text"], select {
+    border-color: #28a745; /* Green */
+}
+
+input[type="text"]:focus, select:focus {
+    border-color: #218838; /* Darker green */
+    box-shadow: 0 0 0 0.2rem rgba(40, 167, 69, 0.25);
+}
+/* Custom card style for previously searched places */
+#previous-searches-card {
+    background-color: white;
+    border-radius: 1rem;
+    padding: 0;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    height: 400px; /* Set the card height equal to the map height */
+    overflow-y: auto; /* Add a vertical scrollbar if the content overflows */
+}
+
