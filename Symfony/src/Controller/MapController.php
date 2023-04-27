@@ -32,7 +32,13 @@ class MapController extends AbstractController
             'radius' => $radius * 1609.344, // Convert miles to meters
         ]);
 
-        return new JsonResponse($response);
+        $jsonResponse = new JsonResponse($response);
+        // Manually set the CORS headers
+        $jsonResponse->headers->set('Access-Control-Allow-Origin', '*');
+        $jsonResponse->headers->set('Access-Control-Allow-Methods', 'GET, OPTIONS, POST, PUT, PATCH, DELETE');
+        $jsonResponse->headers->set('Access-Control-Allow-Headers', 'Content-Type, Authorization');
+
+        return $jsonResponse;
     }
 
     #[Route('/map', name: 'app_map')]

@@ -1,0 +1,225 @@
+::selection {
+    color: #fff;
+    background: #664AFF;
+}
+
+
+/* Desitination Input */
+.wrapper .search-input {
+    background: #fff;
+    width: 100%;
+    border-radius: 5px;
+    position: relative;
+    box-shadow: 0 1px 5px 3px rgba(0, 0, 0, 0.12);
+}
+
+.search-input input {
+    height: 50px;
+    width: 100%;
+    outline: none;
+    border: none;
+    border-radius: 5px;
+    padding: 0 60px 0 20px;
+    font-size: 18px;
+    box-shadow: 0 1px 5px rgba(0, 0, 0, 0.1);
+}
+
+.search-input.active input {
+    border-radius: 5px 5px 0 0;
+}
+
+.search-input .autocom-box {
+    padding: 0;
+    opacity: 0;
+    pointer-events: none;
+    max-height: 280px;
+    overflow-y: auto;
+}
+
+.search-input.active .autocom-box {
+    padding: 10px 8px;
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.autocom-box li {
+    list-style: none;
+    padding: 8px 12px;
+    display: none;
+    width: 100%;
+    cursor: default;
+    border-radius: 3px;
+}
+
+.search-input.active .autocom-box li {
+    display: block;
+}
+
+.autocom-box li:hover {
+    background: #efefef;
+}
+
+.search-input .icon {
+    position: absolute;
+    right: 0;
+    top: 0;
+    height: 55px;
+    width: 55px;
+    text-align: center;
+    line-height: 55px;
+    font-size: 20px;
+    color: #644bff;
+    cursor: pointer;
+}
+
+/* Origin Input */
+.wrapper .search-input1 {
+    background: #fff;
+    width: 100%;
+    border-radius: 5px;
+    position: relative;
+    box-shadow: 0 1px 5px 3px rgba(0, 0, 0, 0.12);
+}
+
+.search-input1 input {
+    height: 50px;
+    width: 100%;
+    outline: none;
+    border: none;
+    border-radius: 5px;
+    padding: 0 60px 0 20px;
+    font-size: 18px;
+    box-shadow: 0 1px 5px rgba(0, 0, 0, 0.1);
+}
+
+.search-input1.active input {
+    border-radius: 5px 5px 0 0;
+}
+
+.search-input1 .autocom-box1 {
+    padding: 0;
+    opacity: 0;
+    pointer-events: none;
+    max-height: 280px;
+    overflow-y: auto;
+}
+
+.search-input1.active .autocom-box1 {
+    padding: 10px 8px;
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.autocom-box1 li {
+    list-style: none;
+    padding: 8px 12px;
+    display: none;
+    width: 100%;
+    cursor: default;
+    border-radius: 3px;
+}
+
+.search-input1.active .autocom-box1 li {
+    display: block;
+}
+
+.autocom-box1 li:hover {
+    background: #efefef;
+}
+
+.search-input1 .icon {
+    position: absolute;
+    top: 50%;
+    right: 10px;
+    transform: translateY(-50%);
+    height: 30px;
+    width: 30px;
+    text-align: center;
+    line-height: 30px;
+    font-size: 25px;
+    cursor: pointer;
+    color: #f16464;
+}
+
+.circle {
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    position: absolute;
+    left: -40px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.circle.from {
+    border: 2px solid #525252;
+}
+
+.circle.to {
+    background-color: rgb(255, 115, 0);
+}
+
+/* Dashed line */
+.wrapper.mb-4:last-child::before {
+    content: "";
+    position: absolute;
+    width: 2px;
+    height: 59px;
+    background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.5) 50%, rgba(255, 255, 255, 0) 50%);
+    background-size: 100% 8px;
+    background-repeat: repeat-y;
+    left: -18px;
+    top: 10%;
+    transform: translateY(-50%);
+}
+
+#search-btn {
+    background-color: rgb(255, 115, 0);
+    border-color: rgb(255, 115, 0);
+    font-size: 18px;
+    font-weight: 500;
+}
+
+ol.numbered {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.numbered li {
+    margin: 0;
+    padding: 0;
+}
+ol.numbered {
+  border-left: 3px solid #b3b3b3;
+  counter-reset: numbered-list;
+  margin-left: 10px;
+  position: relative;
+}
+ol.numbered li {
+  font-size: 16px;
+  line-height: 1.2;
+  margin-bottom: 30px;
+  padding-left: 30px;
+}
+ol.numbered li:last-child {
+  border-left: 3px solid white;
+  margin-left: -3px;
+}
+ol.numbered li:before {
+  background-color: #b3b3b3;
+  border: 3px solid white;
+  border-radius: 50%;
+  color: white;
+  content: counter(numbered-list, decimal);
+  counter-increment: numbered-list;
+  display: block;
+  font-weight: bold;
+  width: 30px;
+  height: 30px;
+  margin-top: -0.5em;
+  line-height: 30px;
+  position: absolute;
+  left: -19.5px;
+  text-align: center;
+}

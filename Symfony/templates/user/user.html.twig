@@ -1,7 +1,55 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}That Way!{% endblock %}
+{% block title %}That Way!
+{% endblock %}
+{% block stylesheets %}
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer"/>
 
+	<link rel="stylesheet" href="{{asset('css/user.css')}}">
+{% endblock %}
+{% block javascripts %}
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+{% endblock %}
 {% block body %}
+	<header>
+		<nav class="navbar navbar-expand-lg">
+			<a class="navbar-brand d-flex align-items-center justify-content-center mx-5" href="#">
 
+				<span id="navbar-title">
+					<span class="halfgreen">That
+					</span>
+					<span class="halfyellow">Way!</span>
+				</span>
+			</a>
+
+
+			<div class="collapse navbar-collapse">
+				<ul class="navbar-nav">
+					<li class="nav-item mr-3">
+						<a class="nav-link" href="#">Home</a>
+					</li>
+					<li class="nav-item mr-3">
+						<a class="nav-link" href="#">Directions</a>
+					</li>
+					<li class="nav-item mr-3">
+						<a class="nav-link" href="#">Routes</a>
+					</li>
+					<li class="nav-item mr-3">
+						<a class="nav-link" href="#">Stations</a>
+					</li>
+					<li class="nav-item mr-3">
+						<a class="nav-link" href="#">Subscription</a>
+					</li>
+				</ul>
+			</div>
+		</nav>
+	</header>
+	<main class="container mt-4">
+        {% block main %}
+
+        {% endblock %}
+	</main>
 {% endblock %}

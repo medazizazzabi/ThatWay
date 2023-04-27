@@ -1,8 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap');
+@import "~@symfony/webpack-encore";
 
 body {
-    background-image: url('tile_background.png');
+    background-image: url('../../img/tile_background.png');
     background-size: cover;
     background-repeat: no-repeat;
     background-attachment: fixed;
@@ -27,11 +28,4 @@ nav {
 .nav-link{
     font-family: 'Montserrat', sans-serif;
     color: black;
-}
-
-
-/* Not for the template */
-
-#map{
-    border-radius: 2%;
 }
