@@ -226,3 +226,11 @@ ol.numbered li:before {
   left: -19.5px;
   text-align: center;
 }
+
+.label-overlay {
+    position: absolute;
+    font-weight: bold;
+    font-size: 16px;
+    color: #6991fd;
+    background-color: white;
+}

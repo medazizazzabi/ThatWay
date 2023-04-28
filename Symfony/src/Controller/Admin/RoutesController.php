@@ -22,6 +22,24 @@ class RoutesController extends AbstractController
     {
         //get routes from databse
         $routes = $this->getDoctrine()->getRepository(Routes::class)->findAll();
+        //add to the each route from Routestations the station name from sequence 0 and the last one
+        foreach ($routes as $route) {
+            $routeStations = $this->getDoctrine()->getRepository(Routestations::class)->findBy(['routeid' => $route->getId()]);
+            //loop through the routeStations and check if there is any close or under construction station
+            foreach ($routeStations as $routeStation) {
+                if ($routeStation->getStationid()->getStatus() == "closed") {
+                    $route->setStatus("closed");
+                    break;
+                }else if( $route->setStatus("under_constriction")){
+                    $route->setStatus("under_constriction");
+                    break;
+                }else{
+                    $route->setStatus("active");
+                }
+            }
+            $route->setStartstationid($routeStations[0]->getStationid());
+            $route->setEndstationid($routeStations[count($routeStations) - 1]->getStationid());
+        }
 
         return $this->render('admin/routes/index.html.twig', [
             'routes' => $routes,
@@ -117,24 +135,6 @@ class RoutesController extends AbstractController
                 $availableStations[] = $station;
             }
         }
-/*
-Station Entity
-private $id;
-private $name;
-private $mode;
-private $location;
-private $status;
-private $accessibilityfeatures = '\'none\'';
-private $facilities = '\'none\'';
-private $operatinghours = 'NULL';
-*/
-
-/*
-private $id;
-private $sequencenumber;
-private $stationid;
-private $routeid;
-*/
 
         if ($request->isMethod('POST') && $request->isXmlHttpRequest()) {
             $routeStationsData = [];

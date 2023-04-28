@@ -29,7 +29,7 @@ class Routestations
     private $sequencenumber;
 
     /**
-     * @var \Routes
+     * @var Routes
      *
      * @ORM\ManyToOne(targetEntity="Routes")
      * @ORM\JoinColumns({
@@ -39,7 +39,7 @@ class Routestations
     private $routeid;
 
     /**
-     * @var \Stations
+     * @var Stations
      *
      * @ORM\ManyToOne(targetEntity="Stations")
      * @ORM\JoinColumns({

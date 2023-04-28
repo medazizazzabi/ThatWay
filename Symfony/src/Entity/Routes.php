@@ -103,5 +103,64 @@ class Routes
         return $this;
     }
 
+    //add startStation and endStation properties
+    /**
+     * @var Stations
+     *
+     */
+    private $startstationid;
+
+    /**
+     * @var Stations
+     *
+     */
+
+    private $endstationid;
+
+    //add getters and setters for startStation and endStation
+    public function getStartstationid(): ?Stations
+    {
+        return $this->startstationid;
+    }
+
+    public function setStartstationid(?Stations $startstationid): self
+    {
+        $this->startstationid = $startstationid;
+
+        return $this;
+    }
+
+    public function getEndstationid(): ?Stations
+    {
+        return $this->endstationid;
+    }
+
+    public function setEndstationid(?Stations $endstationid): self
+    {
+        $this->endstationid = $endstationid;
+
+        return $this;
+    }
+
+    //add status property
+    /**
+     * @var string
+     *
+     */
+    private $status;
+
+    //add getter and setter for status
+    public function getStatus(): ?string
+    {
+        return $this->status;
+    }
+
+    public function setStatus(string $status): self
+    {
+
+        $this->status = $status;
+
+        return $this;
+    }
 
 }

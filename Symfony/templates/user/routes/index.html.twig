@@ -1,64 +1,7 @@
-<!DOCTYPE html>
-<html lang="en">
+{% extends "user/user.html.twig" %}
 
-	<head>
-
-		<meta charset="utf-8">
-		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-		<meta name="description" content="">
-		<meta name="author" content="TemplateMo">
-		<link href="https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i&display=swap" rel="stylesheet">
-
-		<title>That Way!</title>
-
-		<!-- Bootstrap core CSS -->
-		<link
-		href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-
-
-		<!-- Additional CSS Files -->
-		<link rel="stylesheet" href="assets/css/fontawesome.css">
-		<link rel="stylesheet" href="assets/css/templatemo-stand-blog.css">
-		<link rel="stylesheet" href="assets/css/owl.css">
-
-	</head>
-
-	<body>
-
-		<!-- ***** Preloader Start ***** -->
-		<div id="preloader">
-			<div class="jumper">
-				<div></div>
-				<div></div>
-				<div></div>
-			</div>
-		</div>
-		<!-- ***** Preloader End ***** -->
-
-		<!-- Header -->
-		<header class="" style="position:relative">
-			<nav class="navbar navbar-expand-lg">
-				<div class="container">
-					<a class="navbar-brand" href="#">
-						<h2>That Way !</em>
-					</h2>
-				</a>
-				<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-					<span class="navbar-toggler-icon"></span>
-				</button>
-				<div class="collapse navbar-collapse" id="navbarResponsive">
-					<ul class="navbar-nav ml-auto">
-						<li class="nav-item active text-right">
-							<a class="nav-link" href="{{ path('app_user_routes')}}">Routes
-							</a>
-						</li>
-					</ul>
-				</div>
-
-			</nav>
-		</header><!-- Page Content --><section class="blog-posts" style="height:65vh">
-			<div class="container">
-				<div class="row">
+{% block main %}
+<div class="row">
 					<div class="col-lg-12">
 						<div class="card rounded">
 							<div
@@ -83,22 +26,18 @@
 												<td>
 													<a href="{{ path('app_user_routes_show', {'id': route.id}) }}">
 														<span class="pe-2">{{ route.name }}</span>
-														{% if route.origin.status == "closed" or route.destination.status == "closed"  %}
-															<span class="badge bg-danger">Hors Service</span>
-														{% elseif route.origin.status == "under_construction" or route.destination.status == "under_construction" %}
-															<span class="badge bg-warning">En Construction</span>
+														{% if route.status == "closed"%}
+															<span class="badge bg-danger text-white">Hors Service</span>
+														{% elseif route.status == "under_construction"%}
+															<span class="badge bg-warning  text-white">En Construction</span>
 														{% else %}
-															<span class="badge bg-success">En Service</span>
+															<span class="badge bg-success text-white">En Service</span>
 														{% endif %}
 													</a>
 												</td>
 												<td>{{ route.mode }}</td>
-												<td>
-													<a href="{#{ path('admin_station_info', {'id': route.stationorigin.id}) }#}">{{ route.origin.name }}</a>
-												</td>
-												<td>
-													<a href="{#{ path('admin_station_info', {'id': route.stationdestination.id}) }#}">{{ route.destination.name }}</a>
-												</td>
+												<td>{{ route.startstationid.name }}</td>
+												<td>{{ route.endstationid.name }}</td>
 												<td>{{ route.routeduration|date('H:i:s') }}</td>
 												<td>
 													<div style="position: relative; display: inline-block; padding-right: 2em;">
@@ -114,20 +53,4 @@
 						</div>
 					</div>
 				</div>
-			</div>
-		</section>
-		<footer>
-			<div class="container">
-				<div class="row">
-					<div class="co2023-04-25 08:34:02.428 [info] Log level: Info
-2023-04-25 08:34:02.428 [info] Validating found git in: "C:\Program Files\Git\cmd\git.exe"
-2023-04-25 08:34:02.428 [info] Using git "2.34.0.windows.1" from "C:\Program Files\Git\cmd\git.exe"
-2023-04-25 08:34:02.428 [info] > git rev-parse --show-toplevel [78ms]
-2023-04-25 08:34:02.428 [info] fatal: not a git repository (or any of the parent directories): .git
-2023-04-25 08:34:02.429 [info] > git rev-parse --show-toplevel [4502ms]
-2023-04-25 08:34:02.429 [info] fatal: not a git repository (or any of the parent directories): .git
-2023-04-25 08:34:02.504 [info] > git rev-parse --show-toplevel [127ms]
-2023-04-25 08:34:02.504 [info] fatal: not a git repository (or any of the parent directories): .git
-2023-04-25 08:34:02.585 [info] > git rev-parse --show-toplevel [76ms]
-2023-04-25 08:34:02.585 [info] fatal: not a git repository (or any of the parent directories): .git
-2023-04-25 08:34:02.662 [info] > git rev-p
+{% endblock %}
