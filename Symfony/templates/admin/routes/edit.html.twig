@@ -3,29 +3,11 @@
 	Routes
 {% endblock %}
 {% block section %}
-	<h1>Create a Route</h1>
+	{% form_theme form 'bootstrap_5_layout.html.twig' %}
+
 	{{ form_start(form) }}
-	{{ form_errors(form) }}
-	<div class="form-group">
-		{{ form_label(form.name) }}
-		{{ form_widget(form.name, {'attr': {'class': 'form-control'}}) }}
-		{{ form_errors(form.name) }}
-	</div>
-	<div class="form-group">
-		{{ form_label(form.mode) }}
-		{{ form_widget(form.mode, {'attr': {'class': 'custom-select'}}) }}
-		{{ form_errors(form.mode) }}
-	</div>
-	<div class="form-group">
-		{{ form_label(form.routeDuration) }}
-		{{ form_widget(form.routeDuration.format('i:s'), {'attr': {'class': 'form-control'}}) }}
-		{{ form_errors(form.routeDuration) }}
-	</div>
-	<div class="form-group">
-		{{ form_label(form.fare) }}
-		{{ form_widget(form.fare, {'attr': {'class': 'form-control'}}) }}
-		{{ form_errors(form.fare) }}
-	</div>
-	<button type="submit" class="btn btn-primary">Create Route</button>
+	{{ form_widget(form) }}
+	<a href="{{path('app_admin_routes')}}" class="btn btn-danger">Cancel</a>
+	<button type="submit" class="btn btn-primary">Save</button>
 	{{ form_end(form) }}
 {% endblock %}

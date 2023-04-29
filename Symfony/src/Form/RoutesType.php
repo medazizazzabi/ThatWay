@@ -1,4 +1,5 @@
 <?php
+
 namespace App\Form;
 
 use App\Entity\Routes;
@@ -9,25 +10,18 @@ use Symfony\Component\Validator\Constraints\Length;
 use Symfony\Component\Validator\Constraints\NotBlank;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
-use Symfony\Component\Validator\Constraints\PositiveOrZero;
 
 class RoutesType extends AbstractType
 {
     public function buildForm(FormBuilderInterface $builder, array $options): void
     {
         $builder
-            ->add('name', null, [
-                'label' => 'Route Name',
-                'constraints' => [
-                    new NotBlank(),
-                    new Length(['max' => 255])
-                ]
-            ])
+            ->add('name')
             ->add('mode', ChoiceType::class, [
                 'label' => 'Mode of Transportation',
                 'choices' => [
                     'bus' => 'Bus',
-                    'train' => 'Train',
+                    'train' => 'train',
                     'tram' => 'Tram',
                     'ferry' => 'Ferry',
                     'subway' => 'Subway'
@@ -40,20 +34,9 @@ class RoutesType extends AbstractType
                     'class' => 'custom-select'
                 ]
             ])
-            ->add('routeDuration', null, [
-                'label' => 'Route Duration (minutes)',
-                'constraints' => [
-                    new NotBlank(),
-                    new PositiveOrZero()
-                ]
-            ])
-            ->add('fare', null, [
-                'label' => 'Fare (USD)',
-                'constraints' => [
-                    new NotBlank(),
-                    new PositiveOrZero()
-                ]
-            ]);
+            ->add('routeduration')
+            ->add('fare')
+        ;
     }
 
     public function configureOptions(OptionsResolver $resolver): void

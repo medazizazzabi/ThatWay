@@ -29,22 +29,27 @@ async function getLocation() {
 const radius = 10; // The radius in miles
 
 //Origin
+let timeoutId1 = null;
 inputElem1.addEventListener("keyup", async () => {
     let inputValue1 = inputElem1.value
     if (inputValue1) {
         searchInput1.classList.add("active")
-        try {
-            const { latitude, longitude } = await getLocation();
-
-            // Perform an AJAX request to the Symfony endpoint to fetch the auto-complete results
-            const response = await fetch(`autocomplete?input=${inputValue1}&latitude=${latitude}&longitude=${longitude}&radius=${radius}`);
-            const predictions = await response.json();
-            // console.log(predictions['predictions']);
-
-            suggestionWordsGenerator1(predictions['predictions'])
-        } catch (error) {
-            console.error(error);
+        if (timeoutId1) {
+            clearTimeout(timeoutId1);
         }
+        timeoutId1 = setTimeout(async () => {
+            try {
+                const { latitude, longitude } = await getLocation();
+
+                // Perform an AJAX request to the Symfony endpoint to fetch the auto-complete results
+                const response = await fetch(`autocomplete?input=${inputValue1}&latitude=${latitude}&longitude=${longitude}&radius=${radius}`);
+                const predictions = await response.json();
+
+                suggestionWordsGenerator1(predictions['predictions'])
+            } catch (error) {
+                console.error(error);
+            }
+        }, 200);
     } else {
         searchInput1.classList.remove("active")
     }
@@ -53,22 +58,27 @@ inputElem1.addEventListener("keyup", async () => {
 
 
 //Desitination
+let timeoutId = null;
 inputElem.addEventListener("keyup", async () => {
     let inputValue = inputElem.value
     if (inputValue) {
         searchInput.classList.add("active")
-        try {
-            const { latitude, longitude } = await getLocation();
-
-            // Perform an AJAX request to the Symfony endpoint to fetch the auto-complete results
-            const response = await fetch(`autocomplete?input=${inputValue}&latitude=${latitude}&longitude=${longitude}&radius=${radius}`);
-            const predictions = await response.json();
-            // console.log();
-
-            suggestionWordsGenerator(predictions['predictions'])
-        } catch (error) {
-            console.error(error);
+        if (timeoutId) {
+            clearTimeout(timeoutId);
         }
+        timeoutId = setTimeout(async () => {
+            try {
+                const { latitude, longitude } = await getLocation();
+
+                // Perform an AJAX request to the Symfony endpoint to fetch the auto-complete results
+                const response = await fetch(`autocomplete?input=${inputValue}&latitude=${latitude}&longitude=${longitude}&radius=${radius}`);
+                const predictions = await response.json();
+
+                suggestionWordsGenerator(predictions['predictions'])
+            } catch (error) {
+                console.error(error);
+            }
+        }, 200);
     } else {
         searchInput.classList.remove("active")
     }
