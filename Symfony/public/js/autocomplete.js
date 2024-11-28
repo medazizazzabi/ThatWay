@@ -144,7 +144,7 @@ let icon1 = $.querySelector(".search-input1 .icon")
 icon1.addEventListener("click", async () => {
     try {
         const { latitude, longitude } = await getLocation();
-        const response = await fetch(`https://maps.googleapis.com/maps/api/geocode/json?latlng=${latitude},${longitude}&key=AIzaSyBc51bX7s9JCn-hCCkPcBi5q08GDY-GnvU`);
+        const response = await fetch(`https://maps.googleapis.com/maps/api/geocode/json?latlng=${latitude},${longitude}&key=`);
         const predictions = await response.json();
         inputElem1.value = predictions['results'][0]['formatted_address']
         hiddenInput1.value = predictions['results'][0]['place_id']
